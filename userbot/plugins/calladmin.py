@@ -1,8 +1,8 @@
-""".admin Plugin for @REBELBOT"""
+""".admin Plugin for ilham mansiez"""
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
-from REBELBOT.utils import admin_cmd
+from PETERCORDBOT.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="admins"))
