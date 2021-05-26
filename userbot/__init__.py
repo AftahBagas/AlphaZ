@@ -8,7 +8,7 @@ from userbot.Config import Config
 from var import Var
 
 StartTime = time.time()
-REBELversion = "2.0"
+PETERCORDversion = "2.0"
 botversion = "0.1"
 
 os.system("pip install --upgrade pip")
@@ -208,5 +208,5 @@ SUDO_LIST = {}
 
 
 from userbot.helpers import *
-from userbot.helpers import functions as REBELdef
+from userbot.helpers import functions as PETERCORDdef
 from userbot.cmdhelp import CmdHelp
