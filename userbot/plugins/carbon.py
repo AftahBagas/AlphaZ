@@ -403,7 +403,7 @@ async def carbon_api(e):
 
     await PETERCORD.edit("🌝🌝🌝🌝🌝")
     file = "./carbon.png"
-    await REBEL.edit("✅Karbon4 Completed, Uploading Karbon✅")
+    await PETERCORD.edit("✅Karbon4 Completed, Uploading Karbon✅")
     await e.client.send_file(
         e.chat_id,
         file,
