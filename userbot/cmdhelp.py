@@ -62,11 +62,11 @@ class CmdHelp:
         Brings results.
         """
 
-        result = f"**📗 File :** `{self.FILE}`\n"
+        result = f"**🎖 File :** `{self.FILE}`\n"
         if self.WARNING == "" and self.INFO == "":
-            result += f"**⬇️ Official:** {'✅' if self.IS_OFFICIAL else '❌'}\n\n"
+            result += f"**🎖 Official:** {'🎖' if self.IS_OFFICIAL else '❌'}\n\n"
         else:
-            result += f"**⬇️ Official:** {'✅' if self.IS_OFFICIAL else '❌'}\n"
+            result += f"**🎖 Official:** {'🎖' if self.IS_OFFICIAL else '❌'}\n"
 
             if self.INFO == "":
                 if not self.WARNING == "":
@@ -79,16 +79,16 @@ class CmdHelp:
         for command in self.COMMANDS:
             command = self.COMMANDS[command]
             if command["params"] == None:
-                result += f"**🛠 Command :** `{COMMAND_HAND_LER[:1]}{command['command']}`\n"
+                result += f"**🎖 Command :** `{COMMAND_HAND_LER[:1]}{command['command']}`\n"
             else:
-                result += f"**🛠 Command :** `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n"
+                result += f"**🎖 Command :** `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n"
 
             if command["example"] == None:
-                result += f"**💬 Details :** `{command['usage']}`\n\n"
+                result += f"**🎖 Details :** `{command['usage']}`\n\n"
             else:
-                result += f"**💬 Details :** `{command['usage']}`\n"
+                result += f"**🎖 Details :** `{command['usage']}`\n"
                 result += (
-                    f"**⌨️ For Example :** `{COMMAND_HAND_LER[:1]}{command['example']}`\n\n"
+                    f"**🎖 For Example :** `{COMMAND_HAND_LER[:1]}{command['example']}`\n\n"
                 )
         return result
 
