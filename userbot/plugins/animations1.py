@@ -4,10 +4,10 @@ from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import *
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PETERCORD User"
 
 @bot.on(admin_cmd(pattern=f"indflag$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"indflag$", allow_sudo=True))
@@ -391,7 +391,7 @@ async def timer_blankx(e):
 
 
 CmdHelp("animations1").add_command(
-  'indflag', None, '🇮🇳🇮🇳🇮🇳'
+  'indflag', None, '🇲🇨🇲🇨🇲🇨'
 ).add_command(
   'stupid', None, 'Use and see'
 ).add_command(
