@@ -5,7 +5,7 @@ import requests
 from telethon import functions
 
 from userbot import ALIVE_NAME, CMD_LIST, SUDO_LIST
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="help ?(.*)", outgoing=True))
@@ -14,8 +14,8 @@ async def yardim(event):
         return
     tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
     input_str = event.pattern_match.group(1)
-    if tgbotusername is not None or REBEL_input == "text":
-        results = await event.client.inline_query(tgbotusername, "@REBELBOT_SUPPORT")
+    if tgbotusername is not None or PETERCORD_input == "text":
+        results = await event.client.inline_query(tgbotusername, "@TEAMSquadUserbotSupport")
         await results[0].click(
             event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
         )
@@ -40,9 +40,9 @@ async def info(event):
     input_str = event.pattern_match.group(1)
     if input_str == "text":
         string = (
-            "Total {count} commands found in {plugincount} sudo plugins of REBELBOT\n\n"
+            "Total {count} commands found in {plugincount} sudo plugins of PETERCORDBOT\n\n"
         )
-        REBELcount = 0
+        PETERCORDcount = 0
         plugincount = 0
         for i in sorted(SUDO_LIST):
             plugincount += 1
@@ -50,7 +50,7 @@ async def info(event):
             for iter_list in SUDO_LIST[i]:
                 string += "    " + str(iter_list)
                 string += "\n"
-                REBELcount += 1
+                PETERCORDcount += 1
             string += "\n"
         if len(string) > 4095:
             data = string.format(count=REBELcount, plugincount=plugincount)
@@ -63,23 +63,23 @@ async def info(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"All commands of the REBELBOT are [here]({url})"
+            reply_text = f"All commands of the PETERCORDBOT are [here]({url})"
             await event.reply(reply_text, link_preview=False)
             return
         await event.reply(
-            string.format(count=REBELcount, plugincount=plugincount), link_preview=False
+            string.format(count=PETERCORDcount, plugincount=plugincount), link_preview=False
         )
         return
     if input_str:
         if input_str in SUDO_LIST:
             string = "<b>{count} Commands found in plugin {input_str}:</b>\n\n"
-            REBELcount = 0
+            PETERCORDcount = 0
             for i in SUDO_LIST[input_str]:
                 string += f"  •  <code>{i}</code>"
                 string += "\n"
-                REBELcount += 1
+                PETERCORDcount += 1
             await event.reply(
-                string.format(count=REBELcount, input_str=input_str), parse_mode="HTML"
+                string.format(count=PETERCORDcount, input_str=input_str), parse_mode="HTML"
             )
         else:
             reply = await event.reply(input_str + " is not a valid plugin!")
@@ -90,9 +90,9 @@ async def info(event):
         string = "<b>Please specify which plugin do you want help for !!\
             \nNumber of plugins : </b><code>{count}</code>\
             \n<b>Usage:</b> <code>.help plugin name</code>\n\n"
-        REBELcount = 0
+        PETERCORDcount = 0
         for i in sorted(SUDO_LIST):
             string += "≈ " + f"<code>{str(i)}</code>"
             string += " "
-            REBELcount += 1
-        await event.reply(string.format(count=REBELcount), parse_mode="HTML")
+            PETERCORDcount += 1
+        await event.reply(string.format(count=PETERCORDcount), parse_mode="HTML")
