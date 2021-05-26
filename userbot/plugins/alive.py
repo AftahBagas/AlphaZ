@@ -1,25 +1,25 @@
 # Thanks to Sipak bro and Aryan.. 
 # animation Idea by @NOOB_GUY_OP (Sipakisking) 
-# Made by @REBEL_IS_OP...and thanks to @Crackexy for the logos...
+# Made by @diemmmmmmmmmm...and thanks to @Crackexy for the logos...
 # Kang with credits else gay...
-# Porting in REBEL Userbot by @REBEL_IS_OP
+# Porting in PETERCORD Userbot by @diemmmmmmmmmm
 
 import asyncio
 import random
 from telethon import events
 from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME, REBELversion
-from REBELBOT.utils import admin_cmd, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
 
-# 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
+# TENTANG AKU DAN DIA
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "𝕄𝔸𝔽𝕀𝔸𝔹𝕆𝕋"
 
 # Thanks to Sipak bro and Raganork.. 
-# animation Idea by @NOOB_GUY_OP (Sipakisking)
+# animation Idea by @diemmmmmmmmmm (Sipakisking)
 # Made by @ROMANTIC_KILLER...and thanks to @Crackexy for the logos...
 # Kang with credits else gay...
-# alive.py for ÂÝŮ$HópBØȚ
+# alive.py for @diemmmmmmmmmm
 
 ludosudo = Config.SUDO_USERS
 
@@ -28,33 +28,33 @@ if ludosudo:
 else:
     sudou = "False"
 
-REBEL = bot.uid
+PETERCORD = bot.uid
 
 edit_time = 10
 """ =======================CONSTANTS====================== """
-file1 = "https://telegra.ph/file/528425227d8763cedee29.mp4"
-file2 = "https://telegra.ph/file/6700325671af519dd3fd8.mp4"
-file3 = "https://telegra.ph/file/a3090425421917fd339ee.mp4"
+file1 = "https://telegra.ph/file/b52e42266a323cbe9f849.jpg"
+file2 = "https://telegra.ph/file/e4142fc1d14bc3c8181a3.jpg"
+file3 = "https://telegra.ph/file/b52e42266a323cbe9f849.jpg"
 """ =======================CONSTANTS====================== """
-pm_caption = "  __**🔥🔥ℝ𝔼𝔹𝔼𝕃𝔹𝕆𝕋 𝕀𝕊 𝔸𝕃𝕀𝕍𝔼🔥🔥**__\n\n"
+pm_caption = "  __**🎖PETERCORD ALIVE🎖**__\n\n"
 
 pm_caption += (
-    f"                 👑𝕄𝔸𝕊𝕋𝔼ℝ👑\n**  『😈[{DEFAULTUSER}](tg://user?id={REBEL})😈』**\n\n"
+    f"                 🎖PENGGUNA🎖\n**  『🎖[{DEFAULTUSER}](tg://user?id={PETERCORD})🎖』**\n\n"
 )
 
-pm_caption += "🛡️𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡🛡️ : `1.15.0` \n\n"
+pm_caption += "TELETHON : `1.15.0` \n\n"
 
-pm_caption += f"😈𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧😈 : `{REBELversion}`\n\n"
+pm_caption += f"PETERCORD  : `{PETERCORDversion}`\n\n"
 
-pm_caption += f"😱𝗦𝗨𝗗𝗢😱            : `{sudou}`\n\n"
+pm_caption += f"SUDO       : `{sudou}`\n\n"
 
-pm_caption += "😇𝗖𝗛𝗔𝗡𝗡𝗘𝗟😇️   : [ᴊᴏɪɴ](https://t.me/REBELBOT_SUPPORT)\n\n"
+pm_caption += "GRUP SUPPORT: [ᴊᴏɪɴ](https://t.me/TEAMSquadUserbotSupport)\n\n"
 
-pm_caption += "😎𝗖𝗥𝗘𝗔𝗧𝗢𝗥😎    : [𝗥𝗘𝗕𝗘𝗟](https://t.me/REBEL_IS_OP)\n\n"
+pm_caption += "OWNERS  : [ILHAM MANSIEZ](https://t.me/diemmmmmmmmmm)\n\n"
 
-pm_caption += "🤩𝗦𝗨𝗣𝗣𝗢𝗥𝗧𝗘𝗥🤩    :[ⓃⒾⓈⒽⓊ](https://t.me/Ap_Ne_mujhe_yaad_kiya_awwww)\n\n"
+pm_caption += "SUPPORT    :[ⓃⒾⓈⒽⓊ](https://t.me/TEAMSquadUserbotSupport)\n\n"
 
-pm_caption += "      [🔥𝗥𝗘𝗣𝗢🔥](https://github.com/REBEL725/REBELBOT) 🔹 [📜𝗟𝗶𝗰𝗲𝗻𝘀𝗲📜](https://github.com/REBEL725/REBELBOT/blob/main/LICENSE)"
+pm_caption += "      [𝗥𝗘𝗣𝗢](https://github.com/ilham77mansiz/-PETERCORD-) 🔹 [OWNER](https://t.me/diemmmmmmmmmm)"
 
 # @command(outgoing=True, pattern="^.alive$")
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
