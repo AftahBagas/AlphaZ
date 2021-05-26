@@ -5,7 +5,7 @@ from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import bot as PETERCORDBOT
 from userbot import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PETERCORD User"
 PETERCORD_logo = "./PETERCORD725/PETERCORDBOT_logo.jpg"
 
 @PETERCORDBOT.on(admin_cmd(pattern=r"cmds"))
