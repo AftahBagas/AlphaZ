@@ -31,7 +31,7 @@ from telethon.tl.types import (
 
 from userbot import *
 from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
-from REBELBOT.utils import *
+from PETERCORDBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 
 # =================== CONSTANT ===================
@@ -139,7 +139,7 @@ async def promote(promt):
         delete_messages=True,
         pin_messages=True,
     )
-    REBELevent = await edit_or_reply(promt, "Promoting...")
+    PETERCORDevent = await edit_or_reply(promt, "Promoting...")
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "??????"
@@ -147,7 +147,7 @@ async def promote(promt):
         return
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await REBELevent.edit("Promoted Successfully. ABB GROUP KAA BAAP NAA BAN GAYA HAA TUU BAAP MAA THA ORR MAA RAHU GAA !")
+        await PETERCORDevent.edit("Promoted Successfully. PETERCORD BERHASILL !")
     except BadRequestError:
         await REBELevent.edit(NO_PERM)
         return
@@ -172,7 +172,7 @@ async def demote(dmod):
     if not admin and not creator:
         await edit_or_reply(dmod, NO_ADMIN)
         return
-    REBELevent = await edit_or_reply(dmod, "Demoting...")
+    PETERCORDevent = await edit_or_reply(dmod, "Demoting...")
     rank = "??????"
     user = await get_user_from_event(dmod)
     user = user[0]
@@ -189,9 +189,9 @@ async def demote(dmod):
     try:
         await dmod.client(EditAdminRequest(dmod.chat_id, user.id, newrights, rank))
     except BadRequestError:
-        await REBELevent.edit(NO_PERM)
+        await PETERCORDevent.edit(NO_PERM)
         return
-    await REBELevent.edit("Demoted Successfully BADA UDD RAHA THA TU OWNER BAN GAYA THA ABB LE ADMIN KOO APNI PICHA !")
+    await PETERCORDevent.edit("Demoted Successfully PETERCORD BERHASIL ... !")
     if BOTLOG:
         await dmod.client.send_message(
             BOTLOG_CHATID,
@@ -227,12 +227,12 @@ async def ban(bon):
         if reply:
             await reply.delete()
     except BadRequestError:
-        await REBELevent.edit("I ain't got msg deleting right. But still Banned!")
+        await PETERCORDevent.edit("I ain't got msg deleting right. But still Banned!")
         return
     if reason:
-        await REBELevent.edit(f"{str(user.id)} is banned !!\nReason: {reason}")
+        await PETERCORDevent.edit(f"{str(user.id)} is banned !!\nReason: {reason}")
     else:
-        await REBELevent.edit(f"{str(user.id)} is banned  BHAG BHNCHO IDHAR SA!")
+        await PETERCORDevent.edit(f"{str(user.id)} is banned  PETERCORD MEMUKUL!")
     if BOTLOG:
         await bon.client.send_message(
             BOTLOG_CHATID,
@@ -254,14 +254,14 @@ async def nothanos(unbon):
     if not admin and not creator:
         await edit_or_reply(unbon, NO_ADMIN)
         return
-    REBELevent = await edit_or_reply(unbon, "Unbanning...")
+    PETERCORDevent = await edit_or_reply(unbon, "Unbanning...")
     user = await get_user_from_event(unbon)
     user = user[0]
     if not user:
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await REBELevent.edit("Unbanned Successfully  AAYA GAYA OKAD MAA !")
+        await PETERCORDevent.edit("Unbanned Successfully  AAYA GAYA OKAD MAA !")
         if BOTLOG:
             await unbon.client.send_message(
                 BOTLOG_CHATID,
@@ -270,7 +270,7 @@ async def nothanos(unbon):
                 f"CHAT: {unbon.chat.title}(`{unbon.chat_id}`)",
             )
     except UserIdInvalidError:
-        await REBELevent.edit("Sorry I Can't Unban This Retard!")
+        await PETERCORDevent.edit("Sorry I Can't Unban This Retard!")
 
 
 @command(incoming=True)
@@ -341,19 +341,19 @@ async def kick(usr):
     if not user:
         await edit_or_reply(usr, "Couldn't fetch user.")
         return
-    REBELevent = await edit_or_reply(usr, "Kicking...")
+    PETERCORDevent = await edit_or_reply(usr, "Kicking...")
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
         await sleep(0.5)
     except Exception as e:
-        await REBELevent.edit(NO_PERM + f"\n{str(e)}")
+        await PETERCORDevent.edit(NO_PERM + f"\n{str(e)}")
         return
     if reason:
-        await REBELevent.edit(
+        await PETERCORDevent.edit(
             f"Kicked [{user.first_name}](tg://user?id={user.id})!\nReason: {reason}"
         )
     else:
-        await REBELevent.edit(f"CHALA GAYA WOO [{user.first_name}](tg://user?id={user.id})!")
+        await PETERCORDevent.edit(f"PETERCORD MENGEKICK [{user.first_name}](tg://user?id={user.id})!")
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
