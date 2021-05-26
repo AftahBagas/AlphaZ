@@ -296,7 +296,7 @@ async def delete_PETERCORD(event, text, time=None, parse_mode=None, link_preview
     time = time or 5
     if event.sender_id in Config.SUDO_USERS:
         reply_to = await event.get_reply_message()
-        REBELevent = (
+        PETERCORDevent = (
             await reply_to.reply(text, link_preview=link_preview, parse_mode=parse_mode)
             if reply_to
             else await event.reply(
