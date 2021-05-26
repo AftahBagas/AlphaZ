@@ -1,16 +1,16 @@
 import re
 
-from REBELBOT import bot
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
-from REBELBOT.cmdhelp import CmdHelp
-from REBELBOT.helpers.functions import deEmojify
+from PETERCORDBOT import bot
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.cmdhelp import CmdHelp
+from PETERCORDBOT.helpers.functions import deEmojify
 
 
 @bot.on(admin_cmd(pattern="anime(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="anime(?: |$)(.*)", allow_sudo=True))
 async def nope(h1m4n5hu0p):
-    REBEL = h1m4n5hu0p.pattern_match.group(1)
-    if not REBEL:
+    PETERCORD = h1m4n5hu0p.pattern_match.group(1)
+    if not PETERCORD:
         if h1m4n5hu0p.is_reply:
             (await h1m4n5hu0p.get_reply_message()).message
         else:
@@ -18,7 +18,7 @@ async def nope(h1m4n5hu0p):
             )
             return
 
-    troll = await bot.inline_query("animedb_bot", f"{(deEmojify(REBEL))}")
+    troll = await bot.inline_query("animedb_bot", f"{(deEmojify(PETERCORD))}")
 
     await troll[0].click(
         h1m4n5hu0p.chat_id,
