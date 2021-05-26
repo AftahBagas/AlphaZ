@@ -1,7 +1,7 @@
 import time
 
-from userbot import ALIVE_NAME, StartTime, REBELversion
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import ALIVE_NAME, StartTime, PETERCORDversion
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 async def reply_id(event):
@@ -13,8 +13,8 @@ async def reply_id(event):
     return reply_to_id
 
 
-DEFAULTUSER = ALIVE_NAME or "REBEL User"
-REBEL_IMG = Config.ALIVE_PIC
+DEFAULTUSER = ALIVE_NAME or "PETERCORD User"
+PETERCORD_IMG = Config.ALIVE_PIC
 CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "𝕃𝕖𝕘𝕖𝕟𝕕𝕒𝕣𝕪_𝔸𝔽_𝕄𝕒𝕗𝕚𝕒𝔹𝕠𝕥"
 
 USERID = bot.uid
@@ -53,23 +53,23 @@ def get_readable_time(seconds: int) -> str:
 uptime = get_readable_time((time.time() - StartTime))
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="rebel$"))
+@bot.on(admin_cmd(outgoing=True, pattern="petercord$"))
 @bot.on(sudo_cmd(pattern="rebel$", allow_sudo=True))
 async def amireallyalive(alive):
     if alive.fwd_from:
         return
     reply_to_id = await reply_id(alive)
 
-    if REBEL_IMG:
-        REBEL_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-        REBEL_caption += f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
-        REBEL_caption += f"__**𝗕𝗢𝗧 𝗦𝗧𝗔𝗧𝗨𝗦**__\n\n"
-        REBEL_caption += f"**★ 𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 :** `1.15.0`\n"
-        REBEL_caption += f"**★ 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧 :**`{REBELversion}`\n"
-        REBEL_caption += f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
-        REBEL_caption += f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n"
+    if PETERCORD_IMG:
+        PETERCORD_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
+        PETERCORD_caption += f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
+        PETERCORD_caption += f"__**𝗕𝗢𝗧 𝗦𝗧𝗔𝗧𝗨𝗦**__\n\n"
+        PETERCORD_caption += f"**★ 𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 :** `1.15.0`\n"
+        PETERCORD_caption += f"**★ 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧 :**`{PETERCORDversion}`\n"
+        PETERCORD_caption += f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
+        PETERCORD_caption += f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n"
         await alive.client.send_file(
-            alive.chat_id, REBEL_IMG, caption=REBEL_caption, reply_to=reply_to_id
+            alive.chat_id, PETERCORD_IMG, caption=PETERCORD_caption, reply_to=reply_to_id
         )
         await alive.delete()
     else:
@@ -79,7 +79,7 @@ async def amireallyalive(alive):
             f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈ \n"
             f"__**𝗕𝗢𝗧 𝗦𝗧𝗔𝗧𝗨𝗦**__\n\n"
             f"**★ 𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 :** `1.15.0`\n"
-            f"**★ 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧 :** `{REBELversion}`\n"
+            f"**★ 𝗣𝗘𝗧𝗘𝗥𝗖𝗢𝗥𝗗𝗕𝗢𝗧 :** `{PETERCORDversion}`\n"
             f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
             f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n",
         )
