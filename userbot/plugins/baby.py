@@ -1,5 +1,5 @@
-# PLUGIN MADE BY @REBEL_IS_OP FOR REBELBOT
-# KEEP CREDITS ELSE GAY
+# 
+# Tentang aku dan dia
 
 import random, re
 from PETERCORDBOT.utils import admin_cmd
