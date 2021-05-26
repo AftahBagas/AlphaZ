@@ -1,5 +1,5 @@
 #!/bin/bash
-#   Copyright (C) 2021 REBELBOT
+#   Copyright (C) 2021 PETERCORD
 #
 #   Poject VΛDΣЯ is free software: 
 #   you can redistribute it and/or modify it under the terms of the GNU General Public License 
@@ -20,8 +20,8 @@ echo """
 
 
 
-                       𝓛𝓔𝓖𝓔𝓝𝓓𝓐𝓡𝓨 𝓐𝓕 REBELBOT !!
-                                          @REBELBOT_SUPPORT
+                       𝓛𝓔𝓖𝓔𝓝𝓓𝓐𝓡𝓨 𝓐𝓕 PETERCORD !!
+                                          @TEAMSquadUserbotSupport
 """
 
 python3 -m userbot
