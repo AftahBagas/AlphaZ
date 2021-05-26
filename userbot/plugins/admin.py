@@ -216,11 +216,11 @@ async def ban(bon):
     user, reason = await get_user_from_event(bon)
     if not user:
         return
-    REBELevent = await edit_or_reply(bon, "Banning this retard")
+    PETERCORDevent = await edit_or_reply(bon, "Banning this retard")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
-        await REBELevent.edit(NO_PERM)
+        await PETERCORDevent.edit(NO_PERM)
         return
     try:
         reply = await bon.get_reply_message()
