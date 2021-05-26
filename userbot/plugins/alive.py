@@ -8,7 +8,7 @@ import asyncio
 import random
 from telethon import events
 from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME, REBELversion
+from userbot import ALIVE_NAME, PETERCORDversion
 from PETERCORDBOT.utils import admin_cmd, sudo_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
 
