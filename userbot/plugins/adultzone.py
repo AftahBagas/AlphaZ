@@ -1,6 +1,7 @@
 # credits to userge
-# ported to REBELBOT by @REBEL_is_op
+# ported to PETERCORDBOT by ILHAM MANSIEZ
 # will be adding more soon
+#TENTANG AKU DAN DIA
 
 import asyncio
 import os
@@ -9,7 +10,7 @@ import urllib
 import requests
 
 from userbot import *
-from REBELBOT.utils import *
+from PETERCORDBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd("boobs$"))
