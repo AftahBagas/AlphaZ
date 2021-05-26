@@ -53,7 +53,7 @@ async def info(event):
                 PETERCORDcount += 1
             string += "\n"
         if len(string) > 4095:
-            data = string.format(count=REBELcount, plugincount=plugincount)
+            data = string.format(count=PETERCORDcount, plugincount=plugincount)
             key = (
                 requests.post(
                     "https://nekobin.com/api/documents", json={"content": data}
