@@ -68,7 +68,7 @@ def load_module(shortname):
         mod.borg = bot
         mod.PETERCORDBOT = bot
         mod.edit_or_reply = edit_or_reply
-        mod.delete_REBEL = delete_REBEL
+        mod.delete_PETERCORD = delete_PETERCORD
         mod.media_type = media_type
         # support for PETERCORDBOT originals
         sys.modules["PETERCORDBOT.utils"] = userbot.utils
@@ -121,12 +121,12 @@ def admin_cmd(pattern=None, command=None, **args):
                 CMD_LIST.update({file_test: [cmd]})
         else:
             if len(Config.COMMAND_HAND_LER) == 2:
-                REBELreg = "^" + Config.COMMAND_HAND_LER
+                PETERCORDreg = "^" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER[1]
             elif len(Config.COMMAND_HAND_LER) == 1:
-                REBELreg = "^\\" + Config.COMMAND_HAND_LER
+                PETERCORDreg = "^\\" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(REBELreg + pattern)
+            args["pattern"] = re.compile(PETERCORDreg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -186,12 +186,12 @@ def sudo_cmd(pattern=None, command=None, **args):
                 SUDO_LIST.update({file_test: [cmd]})
         else:
             if len(Config.SUDO_COMMAND_HAND_LER) == 2:
-                REBELreg = "^" + Config.SUDO_COMMAND_HAND_LER
+                PETERCORDreg = "^" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.SUDO_COMMAND_HAND_LER[1]
             elif len(Config.SUDO_COMMAND_HAND_LER) == 1:
-                REBELreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
+                PETERCORDreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(REBELreg + pattern)
+            args["pattern"] = re.compile(PETERCORDreg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -304,7 +304,7 @@ async def delete_PETERCORD(event, text, time=None, parse_mode=None, link_preview
             )
         )
     else:
-        REBELevent = await event.edit(
+        PETERCORDevent = await event.edit(
             text, link_preview=link_preview, parse_mode=parse_mode
         )
     await asyncio.sleep(time)
