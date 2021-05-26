@@ -101,7 +101,7 @@ async def on_afk(event):
   if reason
             else f"**Heyy!**\n__I am currently unavailable.__\n__Since when, you ask? From__ `{total_afk_time}`\nI'll be back when I feel to come🚶"
         )
-        msg = await event.reply(message_to_reply, file=REBELpic)
+        msg = await event.reply(message_to_reply, file=PETERCORDpic)
         await asyncio.sleep(2)
         if event.chat_id in last_afk_message:  # pylint:disable=E0602
             await last_afk_message[event.chat_id].delete()  # pylint:disable=E0602
