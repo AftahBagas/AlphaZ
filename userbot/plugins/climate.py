@@ -16,7 +16,7 @@ from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
 from userbot import CMD_HELP
-from REBELBOT.utils import admin_cmd, edit_or_reply, errors_handler, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, errors_handler, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 logging.basicConfig(
@@ -24,7 +24,7 @@ logging.basicConfig(
 )
 
 # ===== CONSTANT =====
-DEFCITY = "Delhi"
+DEFCITY = "Jakarta"
 # ====================
 OWM_API = Config.OPEN_WEATHER_MAP_APPID
 
