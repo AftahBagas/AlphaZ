@@ -98,14 +98,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text="""**Hey! This is [PETERCORDBOT.](https://t.me/TEAMSquadUserbotSupport) \nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/REBELBOT_SUPPORT"),
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/TEAMSquadUserbotSupport"),
                         custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/REBELBOT_SUPPORT"
+                            "⚡ GROUP ⚡", "https://t.me/TEAMSquadUserbotSupport"
                         ),
                     ],
                     [
                         custom.Button.url(
-                            "✨ REPO ✨", "https://github.com/REBEL725/REBELBOT"),
+                            "✨ REPO ✨", "https://github.com/meong"),
                         custom.Button.url
                     (
                             "🔰 TUTORIAL 🔰", ""
