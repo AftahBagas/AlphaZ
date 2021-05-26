@@ -2,16 +2,18 @@
 # A over powerful bot
 # I know u will kang...
 # GTFO!! MOTHERFUCKER!!!!!!!!!!!
+#ilham mansiez
+#Tentang aku dan dia
 
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import ALIVE_NAME, CMD_HELP
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PETERCORD User"
 
 USERID = bot.uid
 
