@@ -1,8 +1,8 @@
 from userbot import ALIVE_NAME, CMD_HELP
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PETERCORD User"
 
 USERID = bot.uid
 
@@ -346,7 +346,7 @@ O = (
     "⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣿\n"
     "⣿⡿⠋⠋⠀⠀⠀⠀⠀⠀⠈⠙⠻⢿⢿⣿⣿⡿⣿⣿⡟⠋⠀⢀⣩\n"
     "⣿⣿⡄⠀⠀⠀⠀⠀⠁⡀⠀⠀⠀⠀⠈⠉⠛⢷⣭⠉⠁⠀⠀⣿⣿\n"
-    "⣇⣀. INDIA🇮🇳INDIA🇮🇳⠆⠠..⠘⢷⣿⣿⣛⠐⣶⣿⣿\n"
+    " ⣿⣿⡄🇲🇨INDONESIA🇲🇨⠆⠠..⠘⢷⣿⣿⣛⠐⣶⣿⣿\n"
     "⣿⣄⠀⣰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⢀⣠⣿⣿⣿⣾⣿⣿⣿\n"
     "⣿⣿⣿⣿⠀⠀⠀⠀⡠⠀⠀⠀⠀⠀⢀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
     "⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠄⠀⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
@@ -526,12 +526,12 @@ async def bluedevildog(dog):
     await edit_or_reply(dog, J)
 
 
-@bot.on(admin_cmd(pattern=r"REBELo$"))
-@bot.on(sudo_cmd(pattern="REBELo$", allow_sudo=True))
-async def bluedevilREBELo(REBELo):
+@bot.on(admin_cmd(pattern=r"PETERCORDo$"))
+@bot.on(sudo_cmd(pattern="PETERCORDo$", allow_sudo=True))
+async def bluedevilREBELo(PETERCORDo):
     if REBELo.fwd_from:
         return
-    await edit_or_reply(REBELo, K)
+    await edit_or_reply(PETERCORDo, K)
 
 
 @bot.on(admin_cmd(pattern=r"hmf$"))
@@ -558,8 +558,8 @@ async def bluedevilsupreme(supreme):
     await edit_or_reply(supreme, N)
 
 
-@bot.on(admin_cmd(pattern=r"india$"))
-@bot.on(sudo_cmd(pattern="india$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"indonesia$"))
+@bot.on(sudo_cmd(pattern="indonesia$", allow_sudo=True))
 async def bluedevilindia(event):
     if event.fwd_from:
         return
@@ -617,7 +617,7 @@ CmdHelp("arts").add_command(
 ).add_command(
   'dog', None, 'Use and see'
 ).add_command(
-  'REBELo', None, 'Use and see'
+  'PETERCORDo', None, 'Use and see'
 ).add_command(
   'hmf', None, 'Use and see'
 ).add_command(
@@ -625,7 +625,7 @@ CmdHelp("arts").add_command(
 ).add_command(
   'sup', None, 'Use and see'
 ).add_command(
-  'india', None, 'Use and see'
+  'indonesia', None, 'Use and see'
 ).add_command(
   'wc', None, 'Use and see'
 ).add_command(
