@@ -28,13 +28,13 @@ from userbot.cmdhelp import *
 from REBELBOT.utils import *
 from userbot.Config import Config
 
-REBEL_row = Config.BUTTONS_IN_HELP
-REBEL_emoji = Config.EMOJI_IN_HELP
+PETERCORD_row = Config.BUTTONS_IN_HELP
+PETERCORD_emoji = Config.EMOJI_IN_HELP
 # thats how a lazy guy imports
-# REBELBOT
+# PETERCORD
 
 def button(page, modules):
-    Row = REBEL_row
+    Row = PETERCORD_row
     Column = 3
 
     modules = sorted([modul for modul in modules if not modul.startswith("_")])
@@ -47,7 +47,7 @@ def button(page, modules):
     for pairs in pairs[page]:
         buttons.append(
             [
-                custom.Button.inline(f"{REBEL_emoji} " + pair, data=f"Information[{page}]({pair})")
+                custom.Button.inline(f"{PETERCORD_emoji} " + pair, data=f"Information[{page}]({pair})")
                 for pair in pairs
             ]
         )
@@ -55,18 +55,18 @@ def button(page, modules):
     buttons.append(
         [
             custom.Button.inline(
-               f"◀️ ᏴᎪᏟᏦ {REBEL_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
+               f"◀️ ᏴᎪᏟᏦ {PETERCORD_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
             ),
             custom.Button.inline(
-               f"•{REBEL_emoji} ❌ {REBEL_emoji}•", data="close"
+               f"•{PETERCORD_emoji} ❌ {PETERCORD_emoji}•", data="close"
             ),
             custom.Button.inline(
-               f"{REBEL_emoji} ΝᎬХͲ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
+               f"{PETERCORD_emoji} ΝᎬХͲ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
             ),
         ]
     )
     return [max_pages, buttons]
-    # Changing this line may give error in bot as i added some special cmds in REBELBOT channel to get this module work...
+    # Changing this line may give error in bot as i added some special cmds in PETERCORDBOT channel to get this module work...
 
     modules = CMD_HELP
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
@@ -75,12 +75,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@REBELBOT_SUPPORT":
+        if event.query.user_id == bot.uid and query == "@TEAMSquadUserbotSupport":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
                 f"Hey! Only use .help please",
-                text=f"**Running REBELBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
+                text=f"**Running PETERCORDBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -94,8 +94,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
         elif event.text=='':
             result = builder.article(
-                "@REBELBOT_SUPPORT",
-                text="""**Hey! This is [REBELBOT.](https://t.me/REBELBOT_SUPPORT) \nYou can know more about me from the links given below 👇**""",
+                "@TEAMSquadUserbotSupport",
+                text="""**Hey! This is [PETERCORDBOT.](https://t.me/TEAMSquadUserbotSupport) \nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
                         custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/REBELBOT_SUPPORT"),
@@ -120,14 +120,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def page(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™",
+                "HELLO THERE. PLEASE MAKE YOUR OWN PETERCORDBOT AND USE. © PETERCORDBOT ™",
                 cache_time=0,
                 alert=True,
             )
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday AF** [REBELBOT](https://t.me/REBELBOT_SUPPORT) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**Legenday AF** [PETERCORDBOT](https://t.me/TEAMSquadUserbotSupport) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
@@ -136,10 +136,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await delete_REBEL(event,
-              "👑REBELBOT Menu Provider Is now Closed👑\n\n         **[© REBELBOT ™](t.me/REBELBOT_SUPPORT)**", 5, link_preview=False
+              "🎖PETERCORDBOT Menu Provider Is now Closed🎖\n\n         **[© REBELBOT ™](t.me/REBELBOT_SUPPORT)**", 5, link_preview=False
             )
         else:
-            REBEL_alert = "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™"
+            REBEL_alert = "HELLO THERE. PLEASE MAKE YOUR OWN PETERCORDBOT AND USE. © PETERCORDBOT ™"
             await event.answer(REBEL_alert, cache_time=0, alert=True)
           
     @tgbot.on(
@@ -148,7 +148,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def Information(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™",
+                "HELLO THERE. PLEASE MAKE YOUR OWN PETERCOEDBOT AND USE. © PETERCORDBOT ™",
                 cache_time=0,
                 alert=True,
             )
@@ -158,7 +158,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         try:
             buttons = [
                 custom.Button.inline(
-                    "⚡ " + cmd[0], data=f"commands[{commands}[{page}]]({cmd[0]})"
+                    "🎖 " + cmd[0], data=f"commands[{commands}[{page}]]({cmd[0]})"
                 )
                 for cmd in CMD_HELP_BOT[commands]["commands"].items()
             ]
@@ -170,7 +170,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         buttons = [buttons[i : i + 2] for i in range(0, len(buttons), 2)]
         buttons.append([custom.Button.inline("◀️ ᏴᎪᏟᏦ", data=f"page({page})")])
         await event.edit(
-            f"**📗 File:** `{commands}`\n**🔢 Number of commands :** `{len(CMD_HELP_BOT[commands]['commands'])}`",
+            f"**🎖 File:** `{commands}`\n**🔢 Number of commands :** `{len(CMD_HELP_BOT[commands]['commands'])}`",
             buttons=buttons,
             link_preview=False,
         )
@@ -181,7 +181,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def commands(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™",
+                "HELLO THERE. PLEASE MAKE YOUR OWN PETERCORDBOT AND USE. © PETERCORDBOT ™",
                 cache_time=0,
                 alert=True,
             )
@@ -226,3 +226,4 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
 # Ask owner before using it in your codes
 # Kangers like LB stay away...
+#TENTANG AKU DAN DIA
