@@ -354,7 +354,7 @@ async def trap(text1, text2, text3):
     ).json()
     h1m4n5hu0p = r.get("message")
     PETERCORDurl = url(h1m4n5hu0p)
-    if not REBELurl:
+    if not PETERCORDurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(h1m4n5hu0p).content)
