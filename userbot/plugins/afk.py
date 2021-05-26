@@ -1,5 +1,5 @@
 # by uniborg...Thanks @spechide
-# Now will be used in REBELlBOT too....
+# Now will be used in PETERCORDBOT too....
 import asyncio
 import datetime
 from datetime import datetime
@@ -7,13 +7,13 @@ from datetime import datetime
 from telethon import events
 from telethon.tl import functions, types
 from userbot import CMD_HELP
-from userbot import ALIVE_NAME, REBELversion
-from REBELBOT.utils import admin_cmd, edit_or_reply
+from userbot import ALIVE_NAME, PETERCORDversion
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
 
-REBEL = bot.uid
+PETERCORD = bot.uid
 
 
 global USER_AFK  # pylint:disable=E0602
@@ -42,11 +42,11 @@ async def set_not_afk(event):
         total_afk_time = str((afk_end - afk_start))
     current_message = event.message.message
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
-        REBELBOT = await borg.send_message(
+        PETERCORDBOT = await borg.send_message(
             event.chat_id,
             "🔥__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
             + total_afk_time
-            + "`", file=REBELpic
+            + "`", file=PETERCORDpic
         )
         try:
             await borg.send_message(  # pylint:disable=E0602
@@ -60,12 +60,12 @@ async def set_not_afk(event):
                 event.chat_id,
                 "Please set `PRIVATE_GROUP_BOT_API_ID` "
                 + "for the proper functioning of afk functionality "
-                + "Ask in @REBELBOT_Official_Chat to get help setting this value\n\n `{}`".format(str(e)),
+                + "Ask in @TEAMSquadUserbotSupport to get help setting this value\n\n `{}`".format(str(e)),
                 reply_to=event.message.id,
                 silent=True,
             )
         await asyncio.sleep(5)
-        await REBELBOT.delete()
+        await PETERCORDBOT.delete()
         USER_AFK = {}  # pylint:disable=E0602
         afk_time = None  # pylint:disable=E0602
 
@@ -127,17 +127,17 @@ async def _(event):
     start_1 = datetime.now()
     afk_start = start_1.replace(microsecond=0)
     reason = event.pattern_match.group(1)
-    REBELpic = await event.client.download_media(h1m4n5hu0p)
+    PETERCORDpic = await event.client.download_media(h1m4n5hu0p)
     if not USER_AFK:  # pylint:disable=E0602
         last_seen_status = await borg(  # pylint:disable=E0602
             functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
         )
         if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
             afk_time = datetime.datetime.now()  # pylint:disable=E0602
-        USER_AFK = f"yes: {reason} {REBELpic}"  # pylint:disable=E0602
+        USER_AFK = f"yes: {reason} {PETERCORDpic}"  # pylint:disable=E0602
         if reason:
             await borg.send_message(
-                event.chat_id, f"__**I'm going afk🚶**__ \n⚜️ Because `{reason}`", file=REBELpic
+                event.chat_id, f"__**I'm going afk🚶**__ \n⚜️ ALASAN `{reason}`", file=PETERCORDpic
             )
         else:
             await borg.send_message(event.chat_id, f"**I am Going afk!**🚶", file=REBELpic)
