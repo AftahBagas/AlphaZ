@@ -1,10 +1,12 @@
+#ilham mansiez
+#tentang aku dan dia
 import asyncio
 
 from userbot import ALIVE_NAME, CMD_HELP
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL user"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "PETETCORD user"
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="kiler( (.*)|$)"))
