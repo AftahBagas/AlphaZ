@@ -1,7 +1,7 @@
 # credits: SNAPDRAGON (@s_n_a_p_s)
 import asyncio
 import time
-from REBELBOT.utils import admin_cmd
+from PETERCORDBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 
