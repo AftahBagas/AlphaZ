@@ -10,7 +10,7 @@ import time
 
 from telethon import events
 
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 if not os.path.isdir("./SAVED"):
@@ -65,10 +65,10 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sREBEL(
+    process = await asyncio.create_subprocess_sPETERCORD(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**Files in [ℝ𝔼𝔹𝔼𝕃𝔹𝕆𝕋](t.me/REBELBOT_official) DOWNLOADS Folder:**\n"
+    OUTPUT = f"**Files in [PETERCIRD](t.me/TEAMSquadUserbotSupport) DOWNLOADS Folder:**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -213,7 +213,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sREBEL(
+    process = await asyncio.create_subprocess_sPETERCORD(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in root directory:**\n"
