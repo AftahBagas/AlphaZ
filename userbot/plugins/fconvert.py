@@ -10,7 +10,7 @@ from telethon.errors import PhotoInvalidDimensionsError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import SendMediaRequest
 
-from REBELBOT.utils import admin_cmd, edit_or_reply, progress, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, progress, sudo_cmd
 from userbot import CMD_HELP
 from userbot.helpers.functions import unzip
 from userbot.cmdhelp import CmdHelp
@@ -21,13 +21,13 @@ if not os.path.isdir("./temp"):
 
 @bot.on(admin_cmd(pattern="stoi$"))
 @bot.on(sudo_cmd(pattern="stoi$", allow_sudo=True))
-async def _(REBEL):
-    if REBEL.fwd_from:
+async def _(PETERCORD):
+    if PETERCORD.fwd_from:
         return
-    reply_to_id = REBEL.message.id
-    if REBEL.reply_to_msg_id:
-        reply_to_id = REBEL.reply_to_msg_id
-    event = await edit_or_reply(REBEL, "Converting.....")
+    reply_to_id = PETERCORD.message.id
+    if PETERCORD.reply_to_msg_id:
+        reply_to_id = PETERCORD.reply_to_msg_id
+    event = await edit_or_reply(PETERCORD, "Converting.....")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -36,11 +36,11 @@ async def _(REBEL):
         reply_message = await event.get_reply_message()
         to_download_directory = Config.TMP_DOWNLOAD_DIRECTORY
         downloaded_file_name = os.path.join(to_download_directory, file_name)
-        downloaded_file_name = await REBEL.client.download_media(
+        downloaded_file_name = await PETERCORD.client.download_media(
             reply_message, downloaded_file_name
         )
         if os.path.exists(downloaded_file_name):
-            caat = await REBEL.client.send_file(
+            caat = await PETERCORD.client.send_file(
                 event.chat_id,
                 downloaded_file_name,
                 force_document=False,
@@ -56,13 +56,13 @@ async def _(REBEL):
 
 @bot.on(admin_cmd(pattern="itos$"))
 @bot.on(sudo_cmd(pattern="itos$", allow_sudo=True))
-async def _(REBEL):
-    if REBEL.fwd_from:
+async def _(PETERCORD):
+    if PETERCORD.fwd_from:
         return
-    reply_to_id = REBEL.message.id
-    if REBEL.reply_to_msg_id:
-        reply_to_id = REBEL.reply_to_msg_id
-    event = await edit_or_reply(REBEL, "Converting.....")
+    reply_to_id = PETERCORD.message.id
+    if PETERCORD.reply_to_msg_id:
+        reply_to_id = PETERCORD.reply_to_msg_id
+    event = await edit_or_reply(PETERCORD, "Converting.....")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -71,11 +71,11 @@ async def _(REBEL):
         reply_message = await event.get_reply_message()
         to_download_directory = Config.TMP_DOWNLOAD_DIRECTORY
         downloaded_file_name = os.path.join(to_download_directory, file_name)
-        downloaded_file_name = await REBEL.client.download_media(
+        downloaded_file_name = await PETERCORD.client.download_media(
             reply_message, downloaded_file_name
         )
         if os.path.exists(downloaded_file_name):
-            caat = await REBEL.client.send_file(
+            caat = await PETERCORD.client.send_file(
                 event.chat_id,
                 downloaded_file_name,
                 force_document=False,
@@ -157,10 +157,10 @@ async def on_file_to_photo(event):
 async def _(event):
     if event.fwd_from:
         return
-    REBELreply = await event.get_reply_message()
-    if not REBELreply or not REBELreply.media or not REBELreply.media.document:
+    PETERCORDreply = await event.get_reply_message()
+    if not PETERCORDreply or not PETERCORDreply.media or not PETERCORDreply.media.document:
         return await edit_or_reply(event, "`Stupid!, This is not animated sticker.`")
-    if REBELreply.media.document.mime_type != "application/x-tgsticker":
+    if PETERCORDreply.media.document.mime_type != "application/x-tgsticker":
         return await edit_or_reply(event, "`Stupid!, This is not animated sticker.`")
     reply_to_id = event.message
     if event.reply_to_msg_id:
@@ -170,18 +170,18 @@ async def _(event):
     async with event.client.conversation(chat) as conv:
         try:
             await silently_send_message(conv, "/start")
-            await event.client.send_file(chat, REBELreply.media)
+            await event.client.send_file(chat, PETERCORDreply.media)
             response = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
             if response.text.startswith("Send me an animated sticker!"):
-                return await REBELevent.edit("`This file is not supported`")
-            REBELresponse = response if response.media else await conv.get_response()
+                return await PETERCORDevent.edit("`This file is not supported`")
+            PETERCORDresponse = response if response.media else await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
-            REBELfile = Path(await event.client.download_media(REBELresponse, "./temp/"))
-            REBELgif = Path(await unzip(REBELfile))
+            PETERCORDfile = Path(await event.client.download_media(PETERCORDresponse, "./temp/"))
+            PETERCORDgif = Path(await unzip(PETERCORDfile))
             kraken = await event.client.send_file(
                 event.chat_id,
-                REBELgif,
+                PETERCORDgif,
                 support_streaming=True,
                 force_document=False,
                 reply_to=reply_to_id,
@@ -196,8 +196,8 @@ async def _(event):
                     unsave=True,
                 )
             )
-            await REBELevent.delete()
-            for files in (REBELgif, REBELfile):
+            await PETERCORDevent.delete()
+            for files in (PETERCORDgif, PETERCORDfile):
                 if files and os.path.exists(files):
                     os.remove(files)
         except YouBlockedUserError:
