@@ -2,7 +2,7 @@ import string
 
 from telethon.tl.types import Channel
 
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config
@@ -15,13 +15,13 @@ global groupsid
 groupsid = []
 
 
-async def all_groups_id(REBEL):
-    REBELgroups = []
-    async for dialog in REBEL.client.iter_dialogs():
+async def all_groups_id(PETERCORD):
+    PETERCORDgroups = []
+    async for dialog in PETERCORD.client.iter_dialogs():
         entity = dialog.entity
         if isinstance(entity, Channel) and entity.megagroup:
-            REBELgroups.append(entity.id)
-    return REBELgroups
+            RPETERCORDgroups.append(entity.id)
+    return PETERCORDgroups
 
 
 @bot.on(admin_cmd(pattern="frwd$"))
