@@ -1,6 +1,6 @@
-# Made by @Kraken_The_BadASS for @REBELBOT_SUPPORT
+# Made by @Kraken_The_BadASS for ilham mansiez
 
-from REBELBOT.utils import *
+from PETERCORDBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 
 
