@@ -6,7 +6,7 @@
 """ Userbot plugin_info command """
 
 from userbot import CMD_HELP
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
