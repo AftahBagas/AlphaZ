@@ -16,7 +16,7 @@ from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
 
 from userbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 
