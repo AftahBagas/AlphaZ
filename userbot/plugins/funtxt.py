@@ -1,6 +1,6 @@
 import nekos
 
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 
@@ -35,29 +35,29 @@ async def payf(event):
 
 @bot.on(admin_cmd(pattern="cat$"))
 @bot.on(sudo_cmd(pattern="cat$", allow_sudo=True))
-async def hmm(REBEL):
-    if REBEL.fwd_from:
+async def hmm(PETERCORD):
+    if PETERCORD.fwd_from:
         return
     reactcat = nekos.textcat()
-    await edit_or_reply(REBEL, reactcat)
+    await edit_or_reply(PETERCORD, reactcat)
 
 
 @bot.on(admin_cmd(pattern="why$"))
 @bot.on(sudo_cmd(pattern="why$", allow_sudo=True))
-async def hmm(REBEL):
-    if REBEL.fwd_from:
+async def hmm(PETERCORD):
+    if PETERCORD.fwd_from:
         return
-    whyREBEL = nekos.why()
-    await edit_or_reply(REBEL, whyREBEL)
+    whyPETERCORD = nekos.why()
+    await edit_or_reply(PETERCORD, whyPETERCORD)
 
 
 @bot.on(admin_cmd(pattern="fact$"))
 @bot.on(sudo_cmd(pattern="fact$", allow_sudo=True))
-async def hmm(REBEL):
-    if REBEL.fwd_from:
+async def hmm(PETERCORD):
+    if PETERCORD.fwd_from:
         return
-    factREBEL = nekos.fact()
-    await edit_or_reply(REBEL, factREBEL)
+    factPETERCORD = nekos.fact()
+    await edit_or_reply(PETERCORD, factPETERCORD)
 
 
 CmdHelp("funtxts").add_command(
