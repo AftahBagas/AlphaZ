@@ -6,7 +6,7 @@ import os
 import time
 from datetime import datetime
 
-from REBELBOT.utils import admin_cmd, progress, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, progress, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
