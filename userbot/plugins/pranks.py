@@ -1,7 +1,7 @@
 """
 credits to @mrconfused and @sandy1709
 """
-# Kang with credits. Using in REBELBOT...
+# Kang with credits. Using in PETERCORDBOT...
 #    Copyright (C) 2020  sandeep.n(π.$)
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -107,7 +107,7 @@ async def PETERCORDBOT(PETERCORDmemes):
         return
     try:
         PETERCORD = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        PETERCORD = Get(REBEL)
+        PETERCORD = Get(PETERCORD)
         await PETERCORDmemes.client(PETERCORD)
     except BaseException:
         pass
