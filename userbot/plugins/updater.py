@@ -5,7 +5,7 @@ import sys
 import git
 
 from userbot.Config import Config
-from REBELBOT.utils import admin_cmd, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd
 
 # -- Constants -- #
 IS_SELECTED_DIFFERENT_BRANCH = (
@@ -15,13 +15,13 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "please check out to an official branch, and re-start the updater."
 )
 OFFICIAL_UPSTREAM_REPO = Config.UPSTREAM_REPO
-BOT_IS_UP_TO_DATE = "**The 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧** is up-to-date sur."
+BOT_IS_UP_TO_DATE = "**The PETERCORDBOT** is up-to-date sur."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
     "changelog: \n\n{changelog}\n"
-    "updating your 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧 ..."
+    "updating your PETERCORDBOT ..."
 )
-NEW_UP_DATE_FOUND = "New update found for {branch_name}\n" "`updating your 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧...`"
+NEW_UP_DATE_FOUND = "New update found for {branch_name}\n" "`updating your PETERCORBOT...`"
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
@@ -137,7 +137,7 @@ def generate_change_log(git_repo, diff_marker):
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit(
-        "Updated your 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧 successfully sur!!!\nNow type `.ping` after 5 mins to check if I'm on🚶😏"
+        "Updated your PETERCORDBOT successfully sur!!!\nNow type `.ping` after 5 mins to check if I'm on🚶😏"
     )
     await remote.push(refspec=refspec)
     await tgbot.disconnect()
