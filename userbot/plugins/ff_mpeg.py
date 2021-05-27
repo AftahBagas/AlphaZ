@@ -92,7 +92,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         return
     reply_to_id = await reply_id(event)
-    REBELevent = await edit_or_reply(event, "`Triming the media......`")
+    PETERCORDevent = await edit_or_reply(event, "`Triming the media......`")
     current_message_text = event.raw_text
     cmt = current_message_text.split(" ")
     start = datetime.now()
