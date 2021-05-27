@@ -201,7 +201,7 @@ async def _(event):
                 if files and os.path.exists(files):
                     os.remove(files)
         except YouBlockedUserError:
-            await REBELevent.edit("Unblock @tgstogifbot")
+            await PETERCORDevent.edit("Unblock @tgstogifbot")
             return
 
 
