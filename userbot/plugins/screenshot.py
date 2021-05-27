@@ -8,7 +8,7 @@ from datetime import datetime
 
 from selenium import webdriver
 
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="screenshot (.*)", outgoing=True))
@@ -53,7 +53,7 @@ async def _(event):
         if event.reply_to_msg_id:
             message_id = event.reply_to_msg_id
         with io.BytesIO(im_png) as out_file:
-            out_file.name = "REBELBOT.ScreenCapture.PNG"
+            out_file.name = "PETERCORDBOT.ScreenCapture.PNG"
             await borg.send_file(
                 event.chat_id,
                 out_file,
