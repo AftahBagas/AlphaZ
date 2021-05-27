@@ -29,241 +29,241 @@ from userbot.helpers.functions import (
     trap,
     trash,
 )
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 from . import *
 
 
 @bot.on(admin_cmd(pattern="threats(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="threats(?: |$)(.*)", allow_sudo=True))
-async def REBELBOT(REBELmemes):
-    replied = await REBELmemes.get_reply_message()
+async def PETERCORDBOT(PETERCORDmemes):
+    replied = await PETERCORDmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            REBELmemes, "`Media file not supported. Reply to a supported media`"
+            PETERCORDmemes, "`Media file not supported. Reply to a supported media`"
         )
         return
     if replied.media:
-        REBELmemmes = await edit_or_reply(REBELmemes, "`Detecting Threats.........`")
+        PETERCORDmemes = await edit_or_reply(PETERCORDmemes, "`Detecting Threats.........`")
     else:
         await edit_or_reply(
-            REBELmemes, "`Media file not supported. Reply to a suported media`"
+            PETERCORDmemes, "`Media file not supported. Reply to a suported media`"
         )
         return
     try:
-        REBEL = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        REBEL = Get(REBEL)
-        await REBELmemes.client(REBEL)
+        PETERCORD = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        PETERCORD = Get(PETERCORD)
+        await PETERCORDmemes.client(PETERCORD)
     except BaseException:
         pass
-    download_location = await REBELmemes.client.download_media(replied, "./temp/")
+    download_location = await PETERCORDmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await REBELmemmes.edit(
+            await PETERCORDmemes.edit(
                 "`The replied file is not supported. It should be less than 5mb -_-`"
             )
             os.remove(download_location)
             return
-        await REBELmemmes.edit("`Detected Threats....`")
+        await PETERCORDmemes.edit("`Detected Threats....`")
     else:
-        await REBELmemmes.edit("`the replied file is not supported`")
+        await PETERCORDmemes.edit("`the replied file is not supported`")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await REBELmemmes.edit("ERROR: " + str(exc))
+        await PETERCORDmemes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    REBEL = f"https://telegra.ph{response[0]}"
-    REBEL = await threats(REBEL)
-    await REBELmemmes.delete()
-    await REBELmemes.client.send_file(REBELmemes.chat_id, REBEL, reply_to=replied)
+    PETERCORD = f"https://telegra.ph{response[0]}"
+    PETERCORD = await threats(PETERCORD)
+    await PETERCORDmemes.delete()
+    await PETERCORDmemes.client.send_file(PETERCORDmemes.chat_id, PETERCORD, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="trash(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="trash(?: |$)(.*)", allow_sudo=True))
-async def REBELBOT(REBELmemes):
-    replied = await REBELmemes.get_reply_message()
+async def PETERCORDBOT(PETERCORDmemes):
+    replied = await PETERCORDmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            REBELmemes, "`Media file not supported. Reply to a suported media`"
+            PETERCORDmemes, "`Media file not supported. Reply to a suported media`"
         )
         return
     if replied.media:
-        REBELmemmes = await edit_or_reply(REBELmemes, "`Detecting Trash....`")
+        PETERCORDmemes = await edit_or_reply(PETERCORDmemes, "`Detecting Trash....`")
     else:
         await edit_or_reply(
-            REBELmemes, "`Media file not supported. Reply to a suported media`"
+            PETERCORDmemes, "`Media file not supported. Reply to a suported media`"
         )
         return
     try:
-        REBEL = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        REBEL = Get(REBEL)
-        await REBELmemes.client(REBEL)
+        PETERCORD = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        PETERCORD = Get(REBEL)
+        await PETERCORDmemes.client(PETERCORD)
     except BaseException:
         pass
-    download_location = await REBELmemes.client.download_media(replied, "./temp/")
+    download_location = await PETERCORDmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await REBELmemmes.edit(
+            await PETERCORDmemes.edit(
                 "`The replied file is not suported. Its size should be less than 5mb-_-`"
             )
             os.remove(download_location)
             return
-        await REBELmemmes.edit("`Detected Trash.....`")
+        await PETERCORDmemes.edit("`Detected Trash.....`")
     else:
-        await REBELmemmes.edit("Media file not supported. Reply to a suported media")
+        await PETERCORDmemes.edit("Media file not supported. Reply to a suported media")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await REBELmemmes.edit("ERROR: " + str(exc))
+        await PETERCORDmemes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    REBEL = f"https://telegra.ph{response[0]}"
-    REBEL = await trash(REBEL)
-    await REBELmemmes.delete()
-    await REBELmemes.client.send_file(REBELmemes.chat_id, REBEL, reply_to=replied)
+    PETERCORD = f"https://telegra.ph{response[0]}"
+    PETERCORD = await trash(PETERCORD)
+    await PETERCORDmemes.delete()
+    await PETERCORDmemes.client.send_file(PETERCORDmemes.chat_id, PETERCORD, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="trap(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="trap(?: |$)(.*)", allow_sudo=True))
-async def REBELBOT(REBELmemes):
-    input_str = REBELmemes.pattern_match.group(1)
+async def PETERCORDBOT(PETERCORDmemes):
+    input_str = PETERCORDmemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
     if "-" in input_str:
         text1, text2 = input_str.split("-")
     else:
         await edit_or_reply(
-            REBELmemes,
+            PETERCORDmemes,
             "**Command :** Reply to image or sticker with `.trap (name of the person to trap)-(trapper name)`",
         )
         return
-    replied = await REBELmemes.get_reply_message()
+    replied = await PETERCORDmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            REBELmemes, "Media file not supported. Reply to a suported media"
+            PETERCORDmemes, "Media file not supported. Reply to a suported media"
         )
         return
     if replied.media:
-        REBELmemmes = await edit_or_reply(REBELmemes, "`Trapping.....`")
+        PETERCORDmemes = await edit_or_reply(PETERCORDmemes, "`Trapping.....`")
     else:
         await edit_or_reply(
-            REBELmemes, "Media file not supported. Reply to a suported media"
+            PETERCORDmemes, "Media file not supported. Reply to a suported media"
         )
         return
     try:
-        REBEL = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        REBEL = Get(REBEL)
-        await REBELmemes.client(REBEL)
+        PETERCORD = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        PETERCORD = Get(PETERCORD)
+        await PETERCORDmemes.client(PETERCORD)
     except BaseException:
         pass
-    download_location = await REBELmemes.client.download_media(replied, "./temp/")
+    download_location = await PETERCORDmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await REBELmemmes.edit(
+            await PETERCORDmemes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await REBELmemmes.edit("`Trapped...`")
+        await PETERCORDmemes.edit("`Trapped...`")
     else:
-        await REBELmemmes.edit("Media file not supported. Reply to a suported media")
+        await PETERCORDmemes.edit("Media file not supported. Reply to a suported media")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await REBELmemmes.edit("ERROR: " + str(exc))
+        await PETERCORDmemes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    REBEL = f"https://telegra.ph{response[0]}"
-    REBEL = await trap(text1, text2, REBEL)
-    await REBELmemmes.delete()
-    await REBELmemes.client.send_file(REBELmemes.chat_id, REBEL, reply_to=replied)
+    PETERCORD = f"https://telegra.ph{response[0]}"
+    PETERCORD = await trap(text1, text2, PETERCORD)
+    await PETERCORDmemes.delete()
+    await PETERCORDmemes.client.send_file(PETERCORDmemes.chat_id, PETERCORD, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="phc(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="phc(?: |$)(.*)", allow_sudo=True))
-async def REBELBOT(REBELmemes):
-    input_str = REBELmemes.pattern_match.group(1)
+async def PETERCORDBOT(PETERCORDmemes):
+    input_str = PETERCORDmemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
     if "-" in input_str:
         username, text = input_str.split("-")
     else:
         await edit_or_reply(
-            REBELmemes,
+            PETERCORDmemes,
             "**Command :** reply to image or sticker with `.phc (username)-(text in comment)`",
         )
         return
-    replied = await REBELmemes.get_reply_message()
+    replied = await PETERCORDmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            REBELmemes, "Media file not supported. Reply to a suported media"
+            PETERCORDmemes, "Media file not supported. Reply to a suported media"
         )
         return
     if replied.media:
-        REBELmemmes = await edit_or_reply(REBELmemes, "`Making A Comment`.")
+        PETERCORDmemes = await edit_or_reply(PETERCORDmemes, "`Making A Comment`.")
     else:
         await edit_or_reply(
-            REBELmemes, "Media file not supported. Reply to a suported media"
+            PETERCORDmemes, "Media file not supported. Reply to a suported media"
         )
         return
     try:
-        REBEL = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        REBEL = Get(REBEL)
-        await REBELmemes.client(REBEL)
+        PETERCORD = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        PETERCORD = Get(PETERCORD)
+        await PETERCORDmemes.client(PETERCORD)
     except BaseException:
         pass
-    download_location = await REBELmemes.client.download_media(replied, "./temp/")
+    download_location = await PETERCORDmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await REBELmemmes.edit(
+            await PETERCORDmemes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await REBELmemmes.edit("Commented....")
+        await PETERCORDmemes.edit("Commented....")
     else:
-        await REBELmemmes.edit("Media file not supported. Reply to a suported media")
+        await PETERCORDmemes.edit("Media file not supported. Reply to a suported media")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await REBELmemmes.edit("ERROR: " + str(exc))
+        await PETERCORDmemes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    REBEL = f"https://telegra.ph{response[0]}"
-    REBEL = await phcomment(REBEL, text, username)
-    await REBELmemmes.delete()
-    await REBELmemes.client.send_file(REBELmemes.chat_id, REBEL, reply_to=replied)
+    PETERCORD = f"https://telegra.ph{response[0]}"
+    PETERCORD = await phcomment(PETERCORD, text, username)
+    await PETERCORDmemes.delete()
+    await PETERCORDmemes.client.send_file(PETERCORDmemes.chat_id, PETERCORD, reply_to=replied)
 
 
 CmdHelp("prank").add_command(
