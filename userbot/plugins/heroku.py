@@ -187,11 +187,11 @@ async def _(dyno):
         thumb = PETERCORD_logo
     except:
         return await dyno.reply(
-            " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku\n\n[Visit Support Group For Help](https://t.me/REBELBOT_Chit_Chat)"
+            " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku\n\n[Visit Support Group For Help](https://t.me/TEAMSquadUserbotSupport)"
         )
     PETERCORD_data = app.get_log()
     PETERCORD_key = (
-        requests.post("https://nekobin.com/api/documents", json={"content": REBEL_data})
+        requests.post("https://nekobin.com/api/documents", json={"content": PETERCORD_data})
         .json()
         .get("result")
         .get("key")
