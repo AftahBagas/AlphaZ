@@ -123,7 +123,7 @@ async def PETERCORDBOT(PETERCORDmemes):
         await PETERCORDmemes.client(PETERCORD)
     except BaseException:
         pass
-    download_location = await REBELmemes.client.download_media(
+    download_location = await PETERCORDmemes.client.download_media(
         replied, Config.TMP_DOWNLOAD_DIRECTORY
     )
     if download_location.endswith((".webp")):
