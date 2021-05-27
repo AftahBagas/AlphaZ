@@ -2,17 +2,17 @@ import asyncio
 import random
 from asyncio import sleep
 
-from REBELBOT import CmdHelp, bot as REBELBOT, ALIVE_NAME
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
+from PETERCORDBOT import CmdHelp, bot as PETERCORDBOT, ALIVE_NAME
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Your Lover"
 
-h1m4n5hu0p = REBELBOT.uid
+h1m4n5hu0p = PETERCORDBOT.uid
 
-REBEL = f"[{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})"
+PETERCORD = f"[{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})"
 
-@REBELBOT.on(admin_cmd(pattern="hvd$"))
-@REBELBOT.on(sudo_cmd(pattern="hvd$", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern="hvd$"))
+@PETERCORDBOT.on(sudo_cmd(pattern="hvd$", allow_sudo=True))
 async def love(event):
     if event.fwd_from:
         return
@@ -38,8 +38,8 @@ async def love(event):
     await event.edit("__**HAPPY VALENTINE'S DAY**__ [❤️](https://telegra.ph/file/4d51f6a5d98ba94ae2af7.jpg)", link_preview=True)
     
     
-@REBELBOT.on(admin_cmd(pattern="vday$"))
-@REBELBOT.on(sudo_cmd(pattern="vday$", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern="vday$"))
+@PETERCORDBOT.on(sudo_cmd(pattern="vday$", allow_sudo=True))
 async def gif(event):
     if event.fwd_from:
         return
