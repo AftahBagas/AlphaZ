@@ -12,10 +12,10 @@ from telethon.tl.functions.messages import DeleteHistoryRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon import functions, types, events
-from REBELBOT import CmdHelp, bot as REBELBOT
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
-from REBELBOT.Config import Config
-from REBELBOT.plugins.sql_helper.fban_sql import (
+from PETERCORDBOT import CmdHelp, bot as PETERCORDBOT
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
+from PETERCORDBOT.Config import Config
+from PETERCORDBOT.plugins.sql_helper.fban_sql import (
     add_channel,
     get_all_channels,
     in_channels,
@@ -24,14 +24,14 @@ from REBELBOT.plugins.sql_helper.fban_sql import (
 
 logs_id = Config.FBAN_LOGGER_GROUP
 bot = "@MissRose_bot"
-REBEL_logo = "./REBEL725/REBELBOT_logo.jpg"
+PETERCORD_logo = "./PETERCORD725/PETERCORDBOT_logo.jpg"
 # Keep all credits pls
-# madewith great effort by @HeisenbergTheDanger
-# modified by @kraken_the_badass for fbans
+# ILHAMNMANSIEZ
+# TENTANG AKU DAN DIA
 
 
-@REBELBOT.on(admin_cmd(pattern="fban ?(.*)"))
-@REBELBOT.on(sudo_cmd(pattern="fban ?(.*)", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern="fban ?(.*)"))
+@PETERCORDBOT.on(sudo_cmd(pattern="fban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -58,7 +58,7 @@ async def _(event):
             or previous_message.game
             or previous_message.geo
             or previous_message.invoice
-        ):  # Written by @HeisenbergTheDanger
+        ):  # Written by ILHAM MANSIEZ
             await mssg.edit("**ERROR !** \nOnly Text Message is supported for fban.")
             return
         if not previous_message.web_preview and previous_message.photo:
@@ -144,8 +144,8 @@ async def _(event):
                 except BaseException:
                     await mssg.edit("Set up heroku var `FBAN_LOGGER_GROUP` for checking errors.")# Written by @HeisenbergTheDanger
 
-@REBELBOT.on(admin_cmd(pattern="unfban ?(.*)"))
-@REBELBOT.on(sudo_cmd(pattern="unfban ?(.*)", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern="unfban ?(.*)"))
+@PETERCORDBOT.on(sudo_cmd(pattern="unfban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -172,7 +172,7 @@ async def _(event):
             or previous_message.game
             or previous_message.geo
             or previous_message.invoice
-        ):  # Written by @HeisenbergTheDanger
+        ):  # Written by ILHAM
             await mssg.edit("**ERROR !** \nOnly Text Message is supported for unfban.")
             return
         if not previous_message.web_preview and previous_message.photo:
@@ -259,8 +259,8 @@ async def _(event):
                     await mssg.edit("Set up heroku var `FBAN_LOGGER_GROUP` for checking errors.")
 
 
-@REBELBOT.on(admin_cmd(pattern=r"fadd ?(.*)"))
-@REBELBOT.on(sudo_cmd(pattern=r"fadd ?(.*)", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern=r"fadd ?(.*)"))
+@PETERCORDBOT.on(sudo_cmd(pattern=r"fadd ?(.*)", allow_sudo=True))
 async def add_ch(event):
     if event.fwd_from:
         return
@@ -300,8 +300,8 @@ async def add_ch(event):
         await event.delete()
 
 
-@REBELBOT.on(admin_cmd(pattern=r"fremove ?(.*)"))
-@REBELBOT.on(sudo_cmd(pattern=r"fremove ?(.*)", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern=r"fremove ?(.*)"))
+@PETERCORDBOT.on(sudo_cmd(pattern=r"fremove ?(.*)", allow_sudo=True))
 async def remove_ch(event):
     if event.fwd_from:
         return
@@ -329,8 +329,8 @@ async def remove_ch(event):
         await event.delete()
 
 
-@REBELBOT.on(admin_cmd(pattern="fgroups"))
-@REBELBOT.on(sudo_cmd(pattern="fgroups", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern="fgroups"))
+@PETERCORDBOT.on(sudo_cmd(pattern="fgroups", allow_sudo=True))
 async def list(event):
     if event.fwd_from:
         return
@@ -356,8 +356,8 @@ async def list(event):
         await eor(event, msg)
 
 
-@REBELBOT.on(admin_cmd(pattern="fsearch ?(.*)"))
-@REBELBOT.on(sudo_cmd(pattern="fsearch ?(.*)", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern="fsearch ?(.*)"))
+@PETERCORDBOT.on(sudo_cmd(pattern="fsearch ?(.*)", allow_sudo=True))
 async def search(event):
     if event.fwd_from:
         return
@@ -377,12 +377,12 @@ async def search(event):
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 
-@REBELBOT.on(admin_cmd(pattern="newfed ?(.*)", outgoing=True))
-@REBELBOT.on(sudo_cmd(pattern="newfed ?(.*)", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern="newfed ?(.*)", outgoing=True))
+@PETERCORDBOT.on(sudo_cmd(pattern="newfed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    REBEL_input = event.pattern_match.group(1)
+    PETERCORD_input = event.pattern_match.group(1)
     chat = "@MissRose_Bot"
     await eor(event, "`Making new fed...`")
     async with borg.conversation(chat) as conv:
@@ -390,7 +390,7 @@ async def _(event):
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=609517172)
             )
-            await event.client.send_message(chat, f"/newfed {REBEL_input}")
+            await event.client.send_message(chat, f"/newfed {PETERCORD_input}")
             response = await response
         except YouBlockedUserError:
             await eor(event, "`Please unblock` @MissRose_Bot `and try again`")
@@ -403,18 +403,18 @@ async def _(event):
             await eor(event, f"{response.message.message}")
 
 
-@REBELBOT.on(admin_cmd(pattern="renamefed ?(.*)"))
-@REBELBOT.on(sudo_cmd(pattern="renamefed ?(.*)", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern="renamefed ?(.*)"))
+@PETERCORDBOT.on(sudo_cmd(pattern="renamefed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    REBEL_input = event.pattern_match.group(1)
+    PETERCORD_input = event.pattern_match.group(1)
     chat = "@MissRose_Bot"
     await event.edit("`Trying to rename your fed...`")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=609517172))
-              await event.client.send_message(chat, f"/renamefed {REBEL_input}")
+              await event.client.send_message(chat, f"/renamefed {PETERCORD_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @MissRose_Bot")
@@ -424,13 +424,13 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@REBELBOT.on(admin_cmd(pattern="fstat ?(.*)"))
-@REBELBOT.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern="fstat ?(.*)"))
+@PETERCORDBOT.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    REBEL = await event.edit("`Collecting fstat....`")
-    thumb = REBEL_logo
+    PETERCORD = await event.edit("`Collecting fstat....`")
+    thumb = PETERCORD_logo
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         lavde = str(previous_message.sender_id)
@@ -439,7 +439,7 @@ async def _(event):
         lavde = event.pattern_match.group(1)
         user = lavde
     if lavde == "":
-        await REBEL.edit(
+        await PETERCORD.edit(
             "`Need username/id to check fstat`"
         )
         return
@@ -454,25 +454,25 @@ async def _(event):
                     await massive.click(0)
                     await asyncio.sleep(2)
                     massive = await conv.get_response()
-                    await REBELBOT.send_file(
+                    await PETERCORDBOT.send_file(
                         event.chat_id,
                         massive,
                         thumb=thumb,
-                        caption=f"List of feds {user} has been banned in.\n\n**⚡ [Collected using REBELBOT](t.me/REBELBOT_Support) ⚡**",
+                        caption=f"List of feds {user} has been banned in.\n\n**🎖 [SUPPORT PETERCORDBOT](t.me/TEAMSquadUserbotSupport) 🎖**",
                     )
                 else:
                     await borg.send_message(event.chat_id, massive.text)
                 await event.delete()
             except YouBlockedUserError:
-                await REBEL.edit("`Please Unblock` @MissRose_Bot")
+                await PETERCORD.edit("`Please Unblock` @MissRose_Bot")
 
 
-@REBELBOT.on(admin_cmd(pattern="fedinfo ?(.*)"))
-@REBELBOT.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
+@PETERCORDBOT.on(admin_cmd(pattern="fedinfo ?(.*)"))
+@PETERCORDBOT.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    REBEL = await eor(event, "`Fetching fed info.... please wait`")
+    PETERCORD = await eor(event, "`Fetching fed info.... please wait`")
     lavde = event.pattern_match.group(1)
     async with borg.conversation(bot) as conv:
         try:
@@ -480,9 +480,9 @@ async def _(event):
             await conv.get_response()
             await conv.send_message("/fedinfo " + lavde)
             massive = await conv.get_response()
-            await REBEL.edit(massive.text + "\n\n**LEGENDARY_AF_REBELBOT**")
+            await PETERCORD.edit(massive.text + "\n\n**LEGENDARY_OF_PETERCORDBOT**")
         except YouBlockedUserError:
-            await REBEL.edit("`Please Unblock` @MissRose_Bot")
+            await PETERCORD.edit("`Please Unblock` @MissRose_Bot")
             
 
 CmdHelp("fed_bot").add_command(
