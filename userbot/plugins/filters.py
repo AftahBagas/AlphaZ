@@ -7,7 +7,7 @@ import asyncio
 import re
 from telethon import events, utils
 from telethon.tl import types
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 from userbot.plugins.sql_helper.filter_sql import get_filter, add_filter, remove_filter, get_all_filters, remove_all_filters
 
@@ -28,7 +28,7 @@ async def on_snip(event):
     if event.chat_id in last_triggered_filters:
         if name in last_triggered_filters[event.chat_id]:
             # avoid userbot spam
-            # "I demand rights for us bots, we are equal to you humans." -Henri Koivuneva (t.me/UserbotTesting/2698)
+            # "I demand rights for us bots, we are equal to you humans." Ilham Mansiez (t.me/@diemmmmmmmmmm)
             return False
     snips = get_all_filters(event.chat_id)
     if snips:
