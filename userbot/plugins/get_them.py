@@ -14,7 +14,7 @@ from userbot.cmdhelp import CmdHelp
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "**⚜️ Admins in this Group ⚜️**: \n"
+    mentions = "**🎖 Admins in this Group 🎖**: \n"
     reply_message = None
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
