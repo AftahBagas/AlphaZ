@@ -1,8 +1,8 @@
-# PLUGIN MADE BY @REBEL_IS_OP FOR REBELBOT
-# KEEP CREDITS ELSE GAY
+# PLUGIN MADE BY Ilham mansiez
+#TENTANG AKU DAN DIA
 
 import random, re
-from REBELBOT.utils import admin_cmd
+from PETERCORDBOT.utils import admin_cmd
 import asyncio
 from telethon import events	
 @borg.on(admin_cmd(pattern="hklove", outgoing=True))
