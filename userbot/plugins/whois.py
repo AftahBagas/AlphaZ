@@ -12,7 +12,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
 from .. import LOGS, TEMP_DOWNLOAD_DIRECTORY
-from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from PETERCORDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 # Copyright (C) 2019 The Raphielscape Company LLC.
@@ -31,7 +31,7 @@ from userbot.cmdhelp import CmdHelp
 async def who(event):
     if event.fwd_from:
         return
-    REBEL = await edit_or_reply(
+    PETERCORD = await edit_or_reply(
         event, "`Sit tight while I steal some data from This guuyyy...`"
     )
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -57,9 +57,9 @@ async def who(event):
         )
         if not photo.startswith("http"):
             os.remove(photo)
-        await REBEL.delete()
+        await PETERCORD.delete()
     except TypeError:
-        await REBEL.edit(caption, parse_mode="html")
+        await PETERCORD.edit(caption, parse_mode="html")
 
 
 async def get_user(event):
