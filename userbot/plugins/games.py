@@ -1,10 +1,10 @@
 # Made by @Kraken_the_badass for @HellBot_Official
-# Now in REBELBOT
+# Now in PETERCORDBOT
 # Thanks to HellBot
 
 import asyncio
 from telethon import events
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
