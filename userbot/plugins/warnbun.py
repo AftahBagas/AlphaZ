@@ -1,7 +1,7 @@
 """.admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
