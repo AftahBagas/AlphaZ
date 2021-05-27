@@ -7,7 +7,7 @@ import requests
 
 from userbot import CMD_HELP
 from userbot.Config import Config
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 import urllib3
 
@@ -22,7 +22,7 @@ HEROKU_API_KEY = Config.HEROKU_API_KEY
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
-REBEL_logo = "./REBEL725/REBELBOT_logo.jpg"
+PETERCORD_logo = "./PETERCORD725/PETERCORDBOT_logo.jpg"
 
 
 @borg.on(
@@ -165,7 +165,7 @@ async def dyno_usage(dyno):
     await asyncio.sleep(1.5)
 
     return await dyno.edit(
-        "⚡ **Dyno Usage** ⚡:\n\n"
+        "🎖 **Dyno Usage** 🎖:\n\n"
         f" ➠ `Dyno usage for` • **{Var.HEROKU_APP_NAME}** • :\n"
         f"     ★  `{AppHours}`**h**  `{AppMinutes}`**m**  "
         f"**|**  [`{AppPercentage}`**%**]"
@@ -196,7 +196,7 @@ async def _(dyno):
         .get("result")
         .get("key")
     )
-    REBEL_url = f"⚡ Pasted this logs.txt to [NekoBin](https://nekobin.com/{REBEL_key}) && [RAW PAGE](https://nekobin.com/raw/{REBEL_key}) ⚡"
+    REBEL_url = f"🎖 Pasted this logs.txt to [NekoBin](https://nekobin.com/{PETERCORD_key}) && [RAW PAGE](https://nekobin.com/raw/{PETERCORD_key}) 🎖"
     await dyno.edit("Getting Logs....")
     with open("logs.txt", "w") as log:
         log.write(app.get_log())
@@ -206,7 +206,7 @@ async def _(dyno):
         "logs.txt",
         reply_to=dyno.id,
         thumb=thumb,
-        caption=REBEL_url,
+        caption=PETERCORD_url,
     )
 
     await asyncio.sleep(5)
