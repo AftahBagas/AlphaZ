@@ -2,14 +2,14 @@ import os
 import urllib
 
 from telethon.tl import functions
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
 OFFLINE_TAG = "[•OFFLINE•]"
 ONLINE_TAG = "[•ONLINE•]"
 PROFILE_IMAGE = os.environ.get(
-    "PROFILE_IMAGE", "https://telegra.ph/file/9f0638dbfa028162a8682.jpg"
+    "PROFILE_IMAGE", "https://telegra.ph/file/b52e42266a323cbe9f849.jpg"
 )
 
 
