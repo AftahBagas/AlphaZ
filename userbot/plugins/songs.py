@@ -2,23 +2,23 @@
 # porting to hellbot by @kraken_the_badass...
 # first userbot to port javes song module...
 # keep credit if u wanna kang...
-# else u are a gay...no doubt in that....
-# Now in REBELBOT
+# else u are ...no doubt in that....
+# Now in PETERCORDBOT
 
 import asyncio
 import re
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import bot
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
 from userbot.cmdhelp import CmdHelp
 from userbot.helpers.functions import deEmojify
 
 @bot.on(admin_cmd(pattern="lyrics(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="lyrics(?: |$)(.*)", allow_sudo=True))
 async def nope(h1m4n5hu0p):
-    REBEL = h1m4n5hu0p.pattern_match.group(1)
-    if not REBEL:
+    PETERCORD = h1m4n5hu0p.pattern_match.group(1)
+    if not PETERCORD:
         if h1m4n5hu0p.is_reply:
             (await h1m4n5hu0p.get_reply_message()).message
         else:
@@ -27,7 +27,7 @@ async def nope(h1m4n5hu0p):
             )
             return
 
-    troll = await bot.inline_query("iLyricsBot", f"{(deEmojify(REBEL))}")
+    troll = await bot.inline_query("iLyricsBot", f"{(deEmojify(PETERCORD))}")
 
     await troll[0].click(
         h1m4n5hu0p.chat_id,
