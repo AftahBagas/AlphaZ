@@ -4,7 +4,7 @@ import time
 import asyncio
 import requests
 from telethon import events
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 # ================= CONSTANT =================
