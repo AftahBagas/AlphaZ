@@ -11,9 +11,9 @@ import os
 from telethon import functions, types
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
-from REBELBOT.Config import Config
+from PETERCORDBOT.Config import Config
 
 LOGGER = Config.PLUGIN_CHANNEL
 SUDO_WALA = Config.SUDO_USERS
@@ -35,16 +35,16 @@ async def spammer(e):
 
 @bot.on(admin_cmd(pattern="bigspam"))
 @bot.on(sudo_cmd(pattern="bigspam", allow_sudo=True))
-async def bigspam(REBEL):
-    if not REBEL.text[0].isalpha() and REBEL.text[0] not in ("/", "#", "@", "!"):
-        REBEL_msg = REBEL.text
-        REBELBOT_count = int(REBEL_msg[9:13])
-        REBEL_spam = str(REBEL.text[13:])
-        for i in range(1, REBELBOT_count):
-            await REBEL.respond(REBEL_spam)
-        await REBEL.delete()
+async def bigspam(PETERCORD):
+    if not PETERCORD.text[0].isalpha() and PETERCORD.text[0] not in ("/", "#", "@", "!"):
+        PETERCORD_msg = PETERCORD.text
+        PETERCORDBOT_count = int(PETERCORD_msg[9:13])
+        PETERCORD_spam = str(PETERCORD.text[13:])
+        for i in range(1, PETERCORDBOT_count):
+            await PETERCORD.respond(PETERCORD_spam)
+        await PETERCORD.delete()
         if LOGGER:
-            await REBEL.client.send_message(
+            await PETERCORD.client.send_message(
                 LOGGER_GROUP, "#BIGSPAM \n\n" "Bigspam was executed successfully"
             )
 
