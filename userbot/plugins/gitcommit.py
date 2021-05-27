@@ -25,9 +25,9 @@ async def download(event):
         await edit_or_reply(event, "`Please ADD Proper Access Token from github.com`")
         return
     if Var.GIT_REPO_NAME is None:
-        await edit_or_reply(event, "`Please ADD Proper Github Repo Name of REBELBOT`")
+        await edit_or_reply(event, "`Please ADD Proper Github Repo Name of PETERCORDBOT`")
         return
-    REBELBOT = await edit_or_reply(event, "Processing ...")
+    PETERCORDBOT = await edit_or_reply(event, "Processing ...")
     if not os.path.isdir(GIT_TEMP_DIR):
         os.makedirs(GIT_TEMP_DIR)
     start = datetime.now()
@@ -39,19 +39,19 @@ async def download(event):
             reply_message.media, GIT_TEMP_DIR
         )
     except Exception as e:
-        await REBELBOT.edit(str(e))
+        await PETERCORDBOT.edit(str(e))
     else:
         end = datetime.now()
         ms = (end - start).seconds
         await event.delete()
-        await REBELBOT.edit(
+        await PETERCORDBOT.edit(
             "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
         )
-        await REBELBOT.edit("Committing to Github....")
-        await git_commit(downloaded_file_name, REBELBOT)
+        await PETERCORDBOT.edit("Committing to Github....")
+        await git_commit(downloaded_file_name, PETERCORDBOT)
 
 
-async def git_commit(file_name, REBELBOT):
+async def git_commit(file_name, PETERCORDBOT):
     content_list = []
     access_token = Var.GITHUB_ACCESS_TOKEN
     g = Github(access_token)
@@ -67,7 +67,7 @@ async def git_commit(file_name, REBELBOT):
     for i in content_list:
         create_file = True
         if i == 'ContentFile(path="' + file_name + '")':
-            return await REBELBOT.edit("`File Already Exists`")
+            return await PETERCORDBOT.edit("`File Already Exists`")
             create_file = False
     file_name = "userbot/plugins/" + file_name
     if create_file == True:
@@ -80,14 +80,14 @@ async def git_commit(file_name, REBELBOT):
             print("Committed File")
             ccess = Var.GIT_REPO_NAME
             ccess = ccess.strip()
-            await REBELBOT.edit(
+            await PETERCORDBOT.edit(
                 f"`Commited On Your Github Repo`\n\n[Your STDPLUGINS](https://github.com/{ccess}/tree/master/userbot/plugins/)"
             )
         except:
             print("Cannot Create Plugin")
-            await REBELBOT.edit("Cannot Upload Plugin")
+            await PETERCORDBOT.edit("Cannot Upload Plugin")
     else:
-        return await REBELBOT.edit("`Committed Suicide`")
+        return await PETERCORDBOT.edit("`Committed Suicide`")
         
         
 CmdHelp("github").add_command(
