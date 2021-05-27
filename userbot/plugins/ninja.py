@@ -7,13 +7,13 @@ from telethon import events
 import telethon.utils
 from telethon.errors import rpcbaseerrors
 
-from REBELBOT.utils import admin_cmd, sudo_cmd, errors_handler
-from userbot import bot as REBELBOT
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, errors_handler
+from userbot import bot as PETERCORDBOT
 from userbot import BOTLOG, BOTLOG_CHATID
 
 
-@REBELBOT.on(admin_cmd(outgoing=True, pattern="del$"))
-@REBELBOT.on(sudo_cmd(allow_sudo=True, pattern="del$"))
+@PETERCORDBOT.on(admin_cmd(outgoing=True, pattern="del$"))
+@PETERCORDBOT.on(sudo_cmd(allow_sudo=True, pattern="del$"))
 @errors_handler
 async def delete_it(safai):
     """ For .del command, delete the replied message. """
