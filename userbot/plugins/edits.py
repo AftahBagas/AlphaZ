@@ -11,10 +11,10 @@ from cowpy import cow
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
-#$$$$$$$$$$$$$$$$$¢$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$¢$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$¢
+#TENTANG AKU DAN DIA BY ILHAM MANSIEZ
 
 GENDER = [
     "u is mard",
