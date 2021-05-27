@@ -3,7 +3,7 @@ Syntax: .edd <User(s)>"""
 
 from telethon import functions
 from userbot.utils import admin_cmd
-from REBELBOT import CMD_HELP
+from PETERCORDBOT import CMD_HELP
 
 @borg.on(admin_cmd(pattern="join ?(.*)"))
 async def _(event):
@@ -24,7 +24,7 @@ async def _(event):
                     ))
                 except Exception as e:
                     await event.reply(str(e))
-            await event.edit("SAB HOO GAYA JOIN ABB NACH  LOO SINGLE NAHI GF KA SATH.")
+            await event.edit("SAYA JOIN WKWK.")
         else:
             for user_id in to_add_users.split(" "):
                 try:
@@ -34,7 +34,7 @@ async def _(event):
                     ))
                 except Exception as e:
                     await event.reply(str(e))
-            await event.edit("HOOO GAYA ADD MEMBER ABBB TO NACHO BHNCHO.")
+            await event.edit("WKWK KECULIK HAHAHA.")
 CMD_HELP.update(
     {
         "adduser": 
