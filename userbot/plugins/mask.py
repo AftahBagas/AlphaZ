@@ -118,8 +118,8 @@ async def PETERCORDBOT(PETERCORDmemes):
         await edit_or_reply(PETERCORDmemes, "reply to a supported media file")
         return
     try:
-        REBEL = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        REBEL = Get(REBEL)
+        PETERCORD = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        PETERCORD = Get(PETERCORD)
         await PETERCORDmemes.client(PETERCORD)
     except BaseException:
         pass
