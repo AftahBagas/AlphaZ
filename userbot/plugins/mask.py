@@ -136,9 +136,9 @@ async def PETERCORDBOT(PETERCORDmemes):
             )
             os.remove(download_location)
             return
-        await REBELevent.edit("generating image..")
+        await PETERCORDevent.edit("generating image..")
     else:
-        await REBELevent.edit("the replied file is not supported")
+        await PETERCORDevent.edit("the replied file is not supported")
         os.remove(download_location)
         return
     try:
@@ -207,7 +207,7 @@ async def PETERCORDBOT(PETERCORDmemes):
 
 @bot.on(admin_cmd(pattern="iphx$"))
 @bot.on(sudo_cmd(pattern="iphx$", allow_sudo=True))
-async def REBELBOT(PETERCORDmemes):
+async def PETERCORDBOT(PETERCORDmemes):
     replied = await PETERCORDmemes.get_reply_message()
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
