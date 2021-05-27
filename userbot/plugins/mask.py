@@ -131,7 +131,7 @@ async def PETERCORDBOT(PETERCORDmemes):
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await REBELevent.edit(
+            await PETERCORDevent.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
