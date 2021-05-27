@@ -1,15 +1,15 @@
-# ported from uniborg by @spechide
+# ported from uniborg by ilham mansiez
 
 import asyncio
 import os
 import time
 from datetime import datetime
 
-from REBELBOT.utils import admin_cmd, sudo_cmd, progress
+from PETERCORDBOT.utils import admin_cmd, sudo_cmd, progress
 from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 
-FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/REBELBOT.media.ffmpeg"
+FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./downloads/PETERCORDBOT.media.ffmpeg"
 
 async def reply_id(event):
     reply_to_id = None
@@ -60,15 +60,15 @@ async def ff_mpeg_trim_cmd(event):
                     reply_message,
                     FF_MPEG_DOWN_LOAD_MEDIA_PATH,
                     progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                        progress(d, t, REBELevent, c_time, "trying to download")
+                        progress(d, t, PETERCORDevent, c_time, "trying to download")
                     ),
                 )
             except Exception as e:
-                await REBELevent.edit(str(e))
+                await PETERCORDevent.edit(str(e))
             else:
                 end = datetime.now()
                 ms = (end - start).seconds
-                await REBELevent.edit(
+                await PETERCORDevent.edit(
                     f"Saved file to `{downloaded_file_name}` in `{ms}` seconds."
                 )
         else:
@@ -107,7 +107,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                REBELevent, f"**Error : **`Can't complete the process`"
+                PETERCORDevent, f"**Error : **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -120,12 +120,12 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=reply_to_id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, REBELevent, c_time, "trying to upload")
+                    progress(d, t, PETERCORDevent, c_time, "trying to upload")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(REBELevent, f"**Error : **`{e}`")
+            return await edit_delete(PETERCORDevent, f"**Error : **`{e}`")
     elif len(cmt) == 2:
         # output should be image
         cmd, start_time = cmt
@@ -134,7 +134,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                REBELevent, f"**Error : **`Can't complete the process`"
+                PETERCORDevent, f"**Error : **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -147,18 +147,18 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=event.message.id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, REBELevent, c_time, "trying to upload")
+                    progress(d, t, PETERCORDevent, c_time, "trying to upload")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(REBELevent, f"**Error : **`{e}`")
+            return await edit_delete(PETERCORDevent, f"**Error : **`{e}`")
     else:
-        await edit_delete(REBELevent, "RTFM")
+        await edit_delete(PETERCORDevent, "RTFM")
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await edit_delete(REBELevent, f"`Completed Process in {ms} seconds`", 3)
+    await edit_delete(PETERCORDevent, f"`Completed Process in {ms} seconds`", 3)
 
 
 @bot.on(admin_cmd(pattern="atrim"))
@@ -173,7 +173,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         return
     reply_to_id = await reply_id(event)
-    REBELevent = await edit_or_reply(event, "`Triming the media...........`")
+    PETERCORDevent = await edit_or_reply(event, "`Triming the media...........`")
     current_message_text = event.raw_text
     cmt = current_message_text.split(" ")
     start = datetime.now()
@@ -192,7 +192,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                REBELevent, f"**Error : **`Can't complete the process`"
+                PETERCORDevent, f"**Error : **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -210,13 +210,13 @@ async def ff_mpeg_trim_cmd(event):
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(REBELevent, f"**Error : **`{e}`")
+            return await edit_delete(PETERCORDevent, f"**Error : **`{e}`")
     else:
-        await edit_delete(REBELevent, "RTFM")
+        await edit_delete(PETERCORDevent, "RTFM")
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await edit_delete(REBELevent, f"`Completed Process in {ms} seconds`", 3)
+    await edit_delete(PETERCORDevent, f"`Completed Process in {ms} seconds`", 3)
 
 
 @bot.on(admin_cmd(pattern="ffmpegclear$"))
