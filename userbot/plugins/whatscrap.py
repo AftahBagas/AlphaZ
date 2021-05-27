@@ -1,5 +1,5 @@
 """Syntax: .whatscrapp as reply to a message copied from @WhatsCRApp"""
-from REBELBOT.utils import *
+from PETERCORDBOT.utils import *
 from userbot.cmdhelp import *
 # when you are tight on schedule...
 # and also lazy af!!
