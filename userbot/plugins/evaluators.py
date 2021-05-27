@@ -25,7 +25,7 @@ async def _(event):
     stdout, stderr = await process.communicate()
     result = str(stdout.decode().strip()) + str(stderr.decode().strip())
     PETERCORDevent = await event.client.get_me()
-    if REBELuser.username:
+    if PETERCORDuser.username:
         curruser = PETERCORDevent.username
     else:
         curruser = "PETERCORDBOT"
