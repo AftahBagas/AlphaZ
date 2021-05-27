@@ -205,7 +205,7 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=reply_to_id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, REBELevent, c_time, "trying to upload")
+                    progress(d, t, PETERCORDevent, c_time, "trying to upload")
                 ),
             )
             os.remove(o)
