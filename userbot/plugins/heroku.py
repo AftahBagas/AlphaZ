@@ -184,19 +184,19 @@ async def _(dyno):
     try:
         Heroku = heroku3.from_key(HEROKU_API_KEY)
         app = Heroku.app(HEROKU_APP_NAME)
-        thumb = REBEL_logo
+        thumb = PETERCORD_logo
     except:
         return await dyno.reply(
             " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku\n\n[Visit Support Group For Help](https://t.me/REBELBOT_Chit_Chat)"
         )
-    REBEL_data = app.get_log()
-    REBEL_key = (
+    PETERCORD_data = app.get_log()
+    PETERCORD_key = (
         requests.post("https://nekobin.com/api/documents", json={"content": REBEL_data})
         .json()
         .get("result")
         .get("key")
     )
-    REBEL_url = f"🎖 Pasted this logs.txt to [NekoBin](https://nekobin.com/{PETERCORD_key}) && [RAW PAGE](https://nekobin.com/raw/{PETERCORD_key}) 🎖"
+    PETERCORD_url = f"🎖 Pasted this logs.txt to [NekoBin](https://nekobin.com/{PETERCORD_key}) && [RAW PAGE](https://nekobin.com/raw/{PETERCORD_key}) 🎖"
     await dyno.edit("Getting Logs....")
     with open("logs.txt", "w") as log:
         log.write(app.get_log())
